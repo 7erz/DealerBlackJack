@@ -1,0 +1,4 @@
+﻿  BlackJack.cpp
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\defaultMain.h(18,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\defaultMain.h(18,19): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  BlackJack.vcxproj -> C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\x64\Debug\BlackJack.exe
