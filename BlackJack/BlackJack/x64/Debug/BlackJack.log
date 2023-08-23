@@ -1,4 +1,11 @@
 ﻿  BlackJack.cpp
 C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\defaultMain.h(18,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\defaultMain.h(18,19): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(26,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(26,23): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(29,32): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(29,43): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(98,22): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(98,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(110,2): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   BlackJack.vcxproj -> C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\x64\Debug\BlackJack.exe

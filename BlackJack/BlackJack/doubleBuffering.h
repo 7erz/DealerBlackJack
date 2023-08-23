@@ -19,7 +19,7 @@ HANDLE Screen[2];
 
 //버퍼를 초기화하는 함수
 void Init() {
-	system("mode con cols=112 lines=20");
+	system("mode con cols=112 lines=41");
 	CONSOLE_CURSOR_INFO cursor;
 
 	//버퍼의 가로 사이즈, 세로 사이즈
