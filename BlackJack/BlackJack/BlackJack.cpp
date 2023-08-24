@@ -38,9 +38,11 @@ void MainKeyboard(Cursor* cursor) {
 		}
 		switch (key) {
 		case RIGHT: if (cursor->curPos == 2) cursor->curPos = 0;
+				  else if (cursor->curPos == 9) cursor->curPos = 5;
 				  else cursor->curPos += 1;
 			break;
 		case LEFT: if (cursor->curPos == 0) cursor->curPos = 2;
+				 else if (cursor->curPos == 5) cursor->curPos = 9;
 				 else cursor->curPos -= 1;
 			break;
 		}
@@ -165,11 +167,11 @@ void GameLogoMenu() {
 
 //게임 시작 후 베팅 금액 보이는 패널
 void SelectMoney() {
-	ShowBuffer(10, 24, "$5");
-	ShowBuffer(30, 24, "$10");
-	ShowBuffer(50, 24, "$25");
-	ShowBuffer(70, 24, "$50");
-	ShowBuffer(90, 24, "EXIT");
+	ShowBuffer(10, 24, "$5");		//curpos = 5
+	ShowBuffer(30, 24, "$10");		//6
+	ShowBuffer(50, 24, "$25");		//7	
+	ShowBuffer(70, 24, "$50");		//8
+	ShowBuffer(90, 24, "EXIT");		//9	-> 다시 0으로		//
 }
 
 void ShowRank() {
@@ -206,40 +208,65 @@ int main() {
 #pragma region 더블 버퍼링
 	Init();
 	Cursor cursor = { 7,4,"▶",0 };
-	int menuPos = 3;	//0 - 게임시작, 1 - 랭크 확인 2 - 게임 종료 3 - 메인메뉴 로고표시
+	int menuPos = 3;	//0 - 게임시작, 1 - 랭크 확인 2 - 게임 종료 3 - 메인메뉴 로고표시 5~9 - 시작 진입 후 메뉴
+	static BOOL bFlagEnter = FALSE;		//프레임마다 엔터를 눌리는 것을 방지
 
 	while (true) {
+		//메뉴 프레임 설정
 		MainMenu();
+
+		//키입력 설정
 		MainKeyboard(&cursor);
-		if (GetAsyncKeyState(VK_RETURN)) {
-			menuPos = cursor.curPos;
+
+		//프레임마다 엔터를 눌리는 것을 방지
+		if (GetAsyncKeyState(VK_RETURN)) {		
+			if (FALSE == bFlagEnter) {
+				menuPos = cursor.curPos;
+				if (menuPos == 0) {
+					cursor.curPos = 5;
+				}
+				bFlagEnter = TRUE;
+			}
 		}
-		if (menuPos == 0 && GetAsyncKeyState(VK_ESCAPE)) {
+		else {
+			bFlagEnter = FALSE;
+		}
+		/*if (menuPos == 0 && GetAsyncKeyState(VK_ESCAPE)) {
 			menuPos = 3;
-		}
+		}*/
+
+		//커서의 표시
 		switch (cursor.curPos) {
 		case 0:
 			ShowBuffer(7, 4, "▶");
-			/*if (GetAsyncKeyState(VK_ESCAPE)) {
-				menuPos = 0;
-			}*/
 			break;
 		case 1:
 			ShowBuffer(47, 4, "▶");
-			/*if (GetAsyncKeyState(VK_ESCAPE)) {
-				menuPos = 1;
-			}*/
 			break;
 		case 2:
 			ShowBuffer(87, 4, "▶");
-			/*if (GetAsyncKeyState(VK_ESCAPE)) {
-				menuPos = 2;
-			}*/
+			break;
+		case 5:
+			ShowBuffer(7, 24, "▶");
+			break;
+		case 6:
+			ShowBuffer(27, 24, "▶");
+			break;
+		case 7:
+			ShowBuffer(47, 24, "▶");
+			break;
+		case 8:
+			ShowBuffer(67, 24, "▶");
+			break;
+		case 9:
+			ShowBuffer(87, 24, "▶");
 			break;
 		default:
 			break;
 		}
-		switch (menuPos) {
+
+		//엔터 입력시 패널의 표시
+		switch (menuPos) {		
 		case 0:
 			SelectMoney();
 			break;
@@ -251,6 +278,24 @@ int main() {
 			break;
 		case 3:
 			GameLogoMenu();
+			break;
+		case 5:
+			//게임진입
+			break;
+		case 6:
+			//게임진입
+			break;
+		case 7:
+			//게임진입
+			break;
+		case 8:
+			//게임진입
+			break;
+		case 9:
+			GameLogoMenu();
+			cursor.curPos = 0;
+			menuPos = 3;
+			break;
 		}
 
 		Flipping();
