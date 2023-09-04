@@ -144,28 +144,6 @@ void GameFrame() {
 	else if (menuPos == 16) {
 		system("title 딜러 블랙 잭 : 다음 판 진행");
 	}
-
-#pragma region 싱글 버퍼링
-	/*//system("mode con cols=112 lines=20");
-	printf("●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎\n");
-	printf("◎                                                                                                            ●\n");
-	printf("●                                                                                                            ◎\n");
-	printf("◎                                                                                                            ●\n");
-	printf("●                                                                                                            ◎\n");
-	printf("◎                                                                                                            ●\n");
-	printf("●                                                                                                            ◎\n");
-	printf("◎                                                                                                            ●\n");
-	printf("●                                                                                                            ◎\n");
-	printf("◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●\n");
-
-	gotoXY(10, 4);
-	printf("게임 시작");
-	gotoXY(50, 4);
-	printf("랭킹 확인");
-	gotoXY(90, 4);
-	printf("게임 종료");*/
-#pragma endregion
-
 #pragma region 더블 버퍼링
 	ShowBuffer(0, 0, "●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎●◎");
 	ShowBuffer(0, 1, "◎                                                                                                            ●");
@@ -756,28 +734,28 @@ void SelectRestart() {
 void InGameInfo() {
 	char stakesString[20];
 	sprintf(stakesString, "  현재 판돈 : %d", stakes);
-	ShowBuffer(4, 10, stakesString);
+	ShowBuffer(4, 12, stakesString);
 
 	char highScoreString[20];
 	sprintf(highScoreString, "하이 스코어 : %d", player.moneyHighScore);
-	ShowBuffer(4, 11, highScoreString);
+	ShowBuffer(4, 13, highScoreString);
 
 	char pMoneyString[20];		//턴 증가 확인
 	sprintf(pMoneyString, "현재 소지금 : %d", player.money);
-	ShowBuffer(4, 12, pMoneyString);
+	ShowBuffer(4, 14, pMoneyString);
 	
 	char pScoreString[20];		//플레이어 점수 증가 확인
 	sprintf(pScoreString, "  나의 점수 : %d", player.score);
-	ShowBuffer(4, 14, pScoreString);
+	ShowBuffer(4, 31, pScoreString);
 	if (player.score > 21) {
-		ShowBuffer(23, 14, "!!BURST!!");
+		ShowBuffer(23, 31, "!!BURST!!");
 	}
 
 	char dScoreString[20];		//딜러 점수 증가 확인
 	sprintf(dScoreString, "딜러의 점수 : %d", dealer.score);
-	ShowBuffer(4, 15, dScoreString);
+	ShowBuffer(4, 21, dScoreString);
 	if (dealer.score > 21) {
-		ShowBuffer(23, 15, "!!BURST!!");
+		ShowBuffer(23, 21, "!!BURST!!");
 	}
 
 	char playedString[20];

@@ -9,5 +9,5 @@ C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\do
 C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(98,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\doubleBuffering.h(110,2): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\BlackJack.cpp(77,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'ScoreEntry' 왼쪽은 무시됩니다.
-C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\BlackJack.cpp(331,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\BlackJack\BlackJack.cpp(309,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   BlackJack.vcxproj -> C:\Users\leesn\OneDrive\바탕 화면\SBS\DealerBlackJack\BlackJack\x64\Debug\BlackJack.exe
