@@ -108,4 +108,5 @@ void ShowBuffer(int x, int y, const char* string) {
 		&dw,
 		NULL
 	);
+
 }
